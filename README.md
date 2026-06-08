@@ -1,7 +1,7 @@
 # Munish Bhardwaj
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=435&lines=QA+Engineer;Kubernetes+Enthusiast;Always+learning+new+things" alt="Typing SVG" />
+  <img src="./assets/mario-hobbies.svg" alt="8-bit Mario walks across the screen, bumps blocks, and mushrooms pop out with hobbies: DevOps, Kubernetes, Filmmaker, Applied AI, AI Filmmaking" width="800" />
 </div>
 
 ## 🚀 About Me
@@ -40,12 +40,12 @@ I'm a passionate QA Engineer and Cloud Architect specializing in Kubernetes, Doc
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=itsmunishbhardwaj&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" height="170"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=itsmunishbhardwaj&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" height="170"/>
+  <img src="https://github-readme-stats-alpha-nine-zi59dwzwcz.vercel.app/api?username=itsmunishbhardwaj&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&cache_seconds=1800" alt="GitHub Stats" height="170"/>
+  <img src="https://github-readme-stats-alpha-nine-zi59dwzwcz.vercel.app/api/top-langs/?username=itsmunishbhardwaj&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=1800" alt="Top Languages" height="170"/>
 </div>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=itsmunishbhardwaj&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com/?user=itsmunishbhardwaj&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 </div>
 
 ## 🏆 GitHub Trophies
@@ -63,6 +63,12 @@ I'm a passionate QA Engineer and Cloud Architect specializing in Kubernetes, Doc
 ## 📚 Featured Repositories
 
 [![How-to-Everything](https://github-readme-stats.vercel.app/api/pin/?username=itsmunishbhardwaj&repo=how-to-everything&theme=tokyonight&hide_border=true)](https://github.com/itsmunishbhardwaj/how-to-everything)
+
+<div align="center">
+  <a href="https://github.com/itsmunishbhardwaj?tab=repositories">
+    <img src="https://img.shields.io/badge/View%20All%20Repositories-2E9EF7?style=for-the-badge&logo=github&logoColor=white" alt="View All Repositories" />
+  </a>
+</div>
 
 ## 💼 What I'm Working On
 

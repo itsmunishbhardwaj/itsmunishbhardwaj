@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 800 220" width="800" height="220"
+     role="img"
+     aria-label="8-bit Mario walks across the screen and bumps five blocks. Mushrooms with hobby labels pop out: DevOps, Kubernetes, Filmmaker, Applied AI, AI Filmmaking.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap');
+    .label {
+      font-family: 'Press Start 2P', 'Courier New', monospace;
+      font-size: 10px;
+      font-weight: bold;
+      fill: #FFFFFF;
+      stroke: #000000;
+      stroke-width: 3px;
+      paint-order: stroke;
+      text-anchor: middle;
+      letter-spacing: 1px;
+    }
+    .qmark {
+      font-family: 'Press Start 2P', 'Courier New', monospace;
+      font-size: 22px;
+      font-weight: bold;
+      fill: #000000;
+      text-anchor: middle;
+    }
+  </style>
+
+  <defs>
+    <!-- Ground brick tile pattern -->
+    <pattern id="brickpattern" patternUnits="userSpaceOnUse" width="32" height="14" x="0" y="195">
+      <rect width="32" height="14" fill="#E39D29"/>
+      <rect x="0" y="0" width="32" height="2" fill="#3A1A06"/>
+      <rect x="15" y="0" width="2" height="14" fill="#3A1A06"/>
+    </pattern>
+
+    <!-- Cloud sprite (cell 4, 36x16) -->
+    <g id="cloud">
+      <rect x="8"  y="0"  width="16" height="4" fill="#FFFFFF"/>
+      <rect x="4"  y="4"  width="24" height="4" fill="#FFFFFF"/>
+      <rect x="0"  y="8"  width="36" height="4" fill="#FFFFFF"/>
+      <rect x="4"  y="12" width="28" height="4" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Bush sprite (cell 4, 48x20) -->
+    <g id="bush">
+      <rect x="10" y="0"  width="12" height="4" fill="#149824"/>
+      <rect x="26" y="0"  width="12" height="4" fill="#149824"/>
+      <rect x="6"  y="4"  width="36" height="4" fill="#149824"/>
+      <rect x="2"  y="8"  width="44" height="4" fill="#149824"/>
+      <rect x="0"  y="12" width="48" height="8" fill="#149824"/>
+      <rect x="14" y="4"  width="4"  height="4" fill="#0F7C1C"/>
+      <rect x="30" y="4"  width="4"  height="4" fill="#0F7C1C"/>
+    </g>
+
+    <!-- ? block (32x32) -->
+    <g id="qblock">
+      <rect x="0" y="0" width="32" height="32" fill="#000000"/>
+      <rect x="2" y="2" width="28" height="28" fill="#FCBC3C"/>
+      <!-- inner shadow lines for that 8-bit look -->
+      <rect x="2"  y="2" width="28" height="3" fill="#FFE164"/>
+      <rect x="2"  y="2" width="3"  height="28" fill="#FFE164"/>
+      <rect x="27" y="2" width="3"  height="28" fill="#C8881C"/>
+      <rect x="2"  y="27" width="28" height="3" fill="#C8881C"/>
+      <text x="16" y="24" class="qmark">?</text>
+    </g>
+
+    <!-- Used (hit) brown block (32x32) -->
+    <g id="usedblock">
+      <rect x="0" y="0" width="32" height="32" fill="#000000"/>
+      <rect x="2" y="2" width="28" height="28" fill="#B86F1C"/>
+      <rect x="2"  y="2"  width="28" height="3"  fill="#D88A2C"/>
+      <rect x="2"  y="2"  width="3"  height="28" fill="#D88A2C"/>
+      <rect x="27" y="2"  width="3"  height="28" fill="#7A4810"/>
+      <rect x="2"  y="27" width="28" height="3"  fill="#7A4810"/>
+      <rect x="6"  y="6"  width="4"  height="4"  fill="#000000"/>
+      <rect x="22" y="6"  width="4"  height="4"  fill="#000000"/>
+      <rect x="6"  y="22" width="4"  height="4"  fill="#000000"/>
+      <rect x="22" y="22" width="4"  height="4"  fill="#000000"/>
+    </g>
+
+    <!-- Mushroom sprite (24x24, cell 2) -->
+    <g id="mushroom">
+      <!-- Cap outline (black) -->
+      <rect x="6"  y="0"  width="12" height="2"  fill="#000000"/>
+      <rect x="2"  y="2"  width="20" height="2"  fill="#000000"/>
+      <rect x="0"  y="4"  width="2"  height="6"  fill="#000000"/>
+      <rect x="22" y="4"  width="2"  height="6"  fill="#000000"/>
+      <rect x="0"  y="10" width="24" height="2"  fill="#000000"/>
+
+      <!-- Red cap -->
+      <rect x="6"  y="2"  width="12" height="2" fill="#E52521"/>
+      <rect x="2"  y="4"  width="20" height="2" fill="#E52521"/>
+      <rect x="2"  y="6"  width="20" height="2" fill="#E52521"/>
+      <rect x="2"  y="8"  width="20" height="2" fill="#E52521"/>
+
+      <!-- White spots on cap -->
+      <rect x="6"  y="4"  width="4"  height="2" fill="#FFFFFF"/>
+      <rect x="4"  y="6"  width="6"  height="2" fill="#FFFFFF"/>
+      <rect x="14" y="4"  width="4"  height="2" fill="#FFFFFF"/>
+      <rect x="14" y="6"  width="6"  height="2" fill="#FFFFFF"/>
+      <rect x="6"  y="8"  width="2"  height="2" fill="#FFFFFF"/>
+      <rect x="16" y="8"  width="2"  height="2" fill="#FFFFFF"/>
+
+      <!-- Stem outline (black) -->
+      <rect x="4"  y="12" width="2"  height="12" fill="#000000"/>
+      <rect x="18" y="12" width="2"  height="12" fill="#000000"/>
+      <rect x="6"  y="22" width="12" height="2"  fill="#000000"/>
+
+      <!-- Stem body (beige) -->
+      <rect x="6"  y="12" width="12" height="10" fill="#FBC5A4"/>
+
+      <!-- Eyes -->
+      <rect x="8"  y="14" width="2"  height="4"  fill="#000000"/>
+      <rect x="14" y="14" width="2"  height="4"  fill="#000000"/>
+    </g>
+  </defs>
+
+  <!-- ============================================================ -->
+  <!-- SCENE                                                         -->
+  <!-- ============================================================ -->
+
+  <!-- Sky -->
+  <rect width="800" height="220" fill="#5C94FC"/>
+
+  <!-- Clouds -->
+  <use href="#cloud" x="60"  y="20"/>
+  <use href="#cloud" x="290" y="14"/>
+  <use href="#cloud" x="540" y="22"/>
+  <use href="#cloud" x="720" y="12"/>
+
+  <!-- Bushes -->
+  <use href="#bush" x="40"  y="175"/>
+  <use href="#bush" x="320" y="175"/>
+  <use href="#bush" x="600" y="175"/>
+
+  <!-- Ground (brick pattern) -->
+  <rect x="0" y="195" width="800" height="25" fill="url(#brickpattern)"/>
+
+  <!-- ============================================================ -->
+  <!-- REMOVABLE LAYER — Mario, blocks, mushrooms, labels             -->
+  <!-- Fades out during finale (keyTime 0.9 → 0.9333) so only sky,    -->
+  <!-- clouds, bushes, and ground remain behind the name reveal.      -->
+  <!-- ============================================================ -->
+  <g>
+    <animate attributeName="opacity"
+             values="1;1;0;0"
+             keyTimes="0;0.9;0.9333;1"
+             dur="15s" repeatCount="indefinite"/>
+
+  <!-- ============================================================ -->
+  <!-- MUSHROOMS (drawn BEFORE blocks so they emerge from behind)    -->
+  <!-- block left x: 84, 234, 384, 534, 684  (centers: 100/250/400/550/700) -->
+  <!-- mushroom width 24, x = block_center - 12                       -->
+  <!-- mushroom starts at y=96 (inside block 88-120), rises to y=64   -->
+  <!-- emerge windows (sec):  2.5-3.1, 5.0-5.6, 7.5-8.1, 10.0-10.6, 12.5-13.1 -->
+  <!-- normalized /15:        0.1667-0.2067, 0.3333-0.3733, 0.5-0.54, 0.6667-0.7067, 0.8333-0.8733 -->
+  <!-- ============================================================ -->
+
+  <use href="#mushroom" x="88" y="96">
+    <animate attributeName="y"
+             values="96;96;64;64"
+             keyTimes="0;0.1667;0.2067;1"
+             dur="15s" repeatCount="indefinite"/>
+  </use>
+  <use href="#mushroom" x="238" y="96">
+    <animate attributeName="y"
+             values="96;96;64;64"
+             keyTimes="0;0.3333;0.3733;1"
+             dur="15s" repeatCount="indefinite"/>
+  </use>
+  <use href="#mushroom" x="388" y="96">
+    <animate attributeName="y"
+             values="96;96;64;64"
+             keyTimes="0;0.5;0.54;1"
+             dur="15s" repeatCount="indefinite"/>
+  </use>
+  <use href="#mushroom" x="538" y="96">
+    <animate attributeName="y"
+             values="96;96;64;64"
+             keyTimes="0;0.6667;0.7067;1"
+             dur="15s" repeatCount="indefinite"/>
+  </use>
+  <use href="#mushroom" x="688" y="96">
+    <animate attributeName="y"
+             values="96;96;64;64"
+             keyTimes="0;0.8333;0.8733;1"
+             dur="15s" repeatCount="indefinite"/>
+  </use>
+
+  <!-- ============================================================ -->
+  <!-- ? BLOCKS (yellow) — visible until hit                          -->
+  <!-- hit times (sec): 2, 4.5, 7, 9.5, 12                            -->
+  <!-- normalized /15: 0.1333, 0.3, 0.4667, 0.6333, 0.8               -->
+  <!-- bump animation: y goes 88→80→88 around hit time                -->
+  <!-- ============================================================ -->
+
+  <use href="#qblock" x="84" y="88">
+    <animate attributeName="y"
+             values="88;88;80;88;88"
+             keyTimes="0;0.1313;0.1333;0.1533;1"
+             dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="visibility"
+             values="visible;visible;hidden;hidden"
+             keyTimes="0;0.1333;0.1334;1"
+             dur="15s" repeatCount="indefinite" calcMode="discrete"/>
+  </use>
+  <use href="#qblock" x="234" y="88">
+    <animate attributeName="y"
+             values="88;88;80;88;88"
+             keyTimes="0;0.298;0.3;0.32;1"
+             dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="visibility"
+             values="visible;visible;hidden;hidden"
+             keyTimes="0;0.3;0.3001;1"
+             dur="15s" repeatCount="indefinite" calcMode="discrete"/>
+  </use>
+  <use href="#qblock" x="384" y="88">
+    <animate attributeName="y"
+             values="88;88;80;88;88"
+             keyTimes="0;0.4647;0.4667;0.4867;1"
+             dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="visibility"
+             values="visible;visible;hidden;hidden"
+             keyTimes="0;0.4667;0.4668;1"
+             dur="15s" repeatCount="indefinite" calcMode="discrete"/>
+  </use>
+  <use href="#qblock" x="534" y="88">
+    <animate attributeName="y"
+             values="88;88;80;88;88"
+             keyTimes="0;0.6313;0.6333;0.6533;1"
+             dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="visibility"
+             values="visible;visible;hidden;hidden"
+             keyTimes="0;0.6333;0.6334;1"
+             dur="15s" repeatCount="indefinite" calcMode="discrete"/>
+  </use>
+  <use href="#qblock" x="684" y="88">
+    <animate attributeName="y"
+             values="88;88;80;88;88"
+             keyTimes="0;0.798;0.8;0.82;1"
+             dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="visibility"
+             values="visible;visible;hidden;hidden"
+             keyTimes="0;0.8;0.8001;1"
+             dur="15s" repeatCount="indefinite" calcMode="discrete"/>
+  </use>
+
+  <!-- ============================================================ -->
+  <!-- USED BLOCKS (brown) — hidden until hit, then visible           -->
+  <!-- ============================================================ -->
+
+  <use href="#usedblock" x="84" y="88" visibility="hidden">
+    <animate attributeName="y"
+             values="88;88;80;88;88"
+             keyTimes="0;0.1313;0.1333;0.1533;1"
+             dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="visibility"
+             values="hidden;hidden;visible;visible"
+             keyTimes="0;0.1333;0.1334;1"
+             dur="15s" repeatCount="indefinite" calcMode="discrete"/>
+  </use>
+  <use href="#usedblock" x="234" y="88" visibility="hidden">
+    <animate attributeName="y"
+             values="88;88;80;88;88"
+             keyTimes="0;0.298;0.3;0.32;1"
+             dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="visibility"
+             values="hidden;hidden;visible;visible"
+             keyTimes="0;0.3;0.3001;1"
+             dur="15s" repeatCount="indefinite" calcMode="discrete"/>
+  </use>
+  <use href="#usedblock" x="384" y="88" visibility="hidden">
+    <animate attributeName="y"
+             values="88;88;80;88;88"
+             keyTimes="0;0.4647;0.4667;0.4867;1"
+             dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="visibility"
+             values="hidden;hidden;visible;visible"
+             keyTimes="0;0.4667;0.4668;1"
+             dur="15s" repeatCount="indefinite" calcMode="discrete"/>
+  </use>
+  <use href="#usedblock" x="534" y="88" visibility="hidden">
+    <animate attributeName="y"
+             values="88;88;80;88;88"
+             keyTimes="0;0.6313;0.6333;0.6533;1"
+             dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="visibility"
+             values="hidden;hidden;visible;visible"
+             keyTimes="0;0.6333;0.6334;1"
+             dur="15s" repeatCount="indefinite" calcMode="discrete"/>
+  </use>
+  <use href="#usedblock" x="684" y="88" visibility="hidden">
+    <animate attributeName="y"
+             values="88;88;80;88;88"
+             keyTimes="0;0.798;0.8;0.82;1"
+             dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="visibility"
+             values="hidden;hidden;visible;visible"
+             keyTimes="0;0.8;0.8001;1"
+             dur="15s" repeatCount="indefinite" calcMode="discrete"/>
+  </use>
+
+  <!-- ============================================================ -->
+  <!-- HOBBY LABELS — fade in after mushroom emerges                 -->
+  <!-- ============================================================ -->
+
+  <text x="100" y="55" class="label" opacity="0">DevOps
+    <animate attributeName="opacity"
+             values="0;0;1;1"
+             keyTimes="0;0.18;0.21;1"
+             dur="15s" repeatCount="indefinite"/>
+  </text>
+  <text x="250" y="55" class="label" opacity="0">Kubernetes
+    <animate attributeName="opacity"
+             values="0;0;1;1"
+             keyTimes="0;0.347;0.377;1"
+             dur="15s" repeatCount="indefinite"/>
+  </text>
+  <text x="400" y="55" class="label" opacity="0">Filmmaker
+    <animate attributeName="opacity"
+             values="0;0;1;1"
+             keyTimes="0;0.514;0.544;1"
+             dur="15s" repeatCount="indefinite"/>
+  </text>
+  <text x="550" y="55" class="label" opacity="0">Applied AI
+    <animate attributeName="opacity"
+             values="0;0;1;1"
+             keyTimes="0;0.681;0.711;1"
+             dur="15s" repeatCount="indefinite"/>
+  </text>
+  <text x="700" y="55" class="label" opacity="0">AI Filmmaking
+    <animate attributeName="opacity"
+             values="0;0;1;1"
+             keyTimes="0;0.847;0.877;1"
+             dur="15s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- ============================================================ -->
+  <!-- MARIO — walks across, jumps under each block                  -->
+  <!-- sprite is 48x48 (cell size 3)                                  -->
+  <!-- outer g: X position (with constant Y=147 ground)               -->
+  <!-- inner g: Y jump offset                                         -->
+  <!-- walk pause positions (Mario left edge under block center -24): -->
+  <!--   76, 226, 376, 526, 676  (centers 100/250/400/550/700)        -->
+  <!-- ============================================================ -->
+
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="-48,147; 76,147; 76,147; 226,147; 226,147; 376,147; 376,147; 526,147; 526,147; 676,147; 676,147; 820,147"
+      keyTimes="0; 0.1333; 0.1667; 0.3; 0.3333; 0.4667; 0.5; 0.6333; 0.6667; 0.8; 0.8333; 1"
+      dur="15s" repeatCount="indefinite"/>
+
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 0,0; 0,-28; 0,0; 0,0; 0,-28; 0,0; 0,0; 0,-28; 0,0; 0,0; 0,-28; 0,0; 0,0; 0,-28; 0,0; 0,0"
+        keyTimes="0; 0.1267; 0.1333; 0.16; 0.2933; 0.3; 0.3267; 0.46; 0.4667; 0.4933; 0.6267; 0.6333; 0.66; 0.7933; 0.8; 0.8267; 1"
+        dur="15s" repeatCount="indefinite"/>
+
+      <!-- ============== MARIO SPRITE (cell size 3) ============== -->
+
+      <!-- Hat (rows 0-1) -->
+      <rect x="12" y="0"  width="24" height="3" fill="#E52521"/>
+      <rect x="9"  y="3"  width="30" height="3" fill="#E52521"/>
+
+      <!-- Face row 2: hair + face + eye -->
+      <rect x="9"  y="6"  width="9"  height="3" fill="#6A2E0E"/>
+      <rect x="18" y="6"  width="15" height="3" fill="#FBC5A4"/>
+      <rect x="33" y="6"  width="3"  height="3" fill="#000000"/>
+      <rect x="36" y="6"  width="3"  height="3" fill="#FBC5A4"/>
+
+      <!-- Face row 3 -->
+      <rect x="6"  y="9"  width="3"  height="3" fill="#6A2E0E"/>
+      <rect x="9"  y="9"  width="6"  height="3" fill="#FBC5A4"/>
+      <rect x="15" y="9"  width="3"  height="3" fill="#6A2E0E"/>
+      <rect x="18" y="9"  width="15" height="3" fill="#FBC5A4"/>
+      <rect x="33" y="9"  width="3"  height="3" fill="#000000"/>
+      <rect x="36" y="9"  width="3"  height="3" fill="#FBC5A4"/>
+
+      <!-- Face row 4: mustache -->
+      <rect x="6"  y="12" width="3"  height="3" fill="#6A2E0E"/>
+      <rect x="9"  y="12" width="6"  height="3" fill="#FBC5A4"/>
+      <rect x="15" y="12" width="6"  height="3" fill="#6A2E0E"/>
+      <rect x="21" y="12" width="9"  height="3" fill="#FBC5A4"/>
+      <rect x="30" y="12" width="3"  height="3" fill="#000000"/>
+      <rect x="33" y="12" width="6"  height="3" fill="#FBC5A4"/>
+
+      <!-- Face row 5 -->
+      <rect x="6"  y="15" width="6"  height="3" fill="#6A2E0E"/>
+      <rect x="12" y="15" width="15" height="3" fill="#FBC5A4"/>
+      <rect x="27" y="15" width="12" height="3" fill="#6A2E0E"/>
+
+      <!-- Neck row 6 -->
+      <rect x="15" y="18" width="18" height="3" fill="#FBC5A4"/>
+
+      <!-- Shirt + overall straps row 7 -->
+      <rect x="9"  y="21" width="9"  height="3" fill="#E52521"/>
+      <rect x="18" y="21" width="3"  height="3" fill="#2C5AA0"/>
+      <rect x="21" y="21" width="12" height="3" fill="#E52521"/>
+
+      <!-- Shirt row 8 -->
+      <rect x="6"  y="24" width="12" height="3" fill="#E52521"/>
+      <rect x="18" y="24" width="6"  height="3" fill="#2C5AA0"/>
+      <rect x="24" y="24" width="15" height="3" fill="#E52521"/>
+
+      <!-- Arms + buttons row 9 -->
+      <rect x="6"  y="27" width="3"  height="3" fill="#FBC5A4"/>
+      <rect x="9"  y="27" width="3"  height="3" fill="#E52521"/>
+      <rect x="12" y="27" width="3"  height="3" fill="#2C5AA0"/>
+      <rect x="15" y="27" width="3"  height="3" fill="#FFFFFF"/>
+      <rect x="18" y="27" width="6"  height="3" fill="#2C5AA0"/>
+      <rect x="24" y="27" width="3"  height="3" fill="#FFFFFF"/>
+      <rect x="27" y="27" width="3"  height="3" fill="#2C5AA0"/>
+      <rect x="30" y="27" width="3"  height="3" fill="#E52521"/>
+      <rect x="33" y="27" width="3"  height="3" fill="#FBC5A4"/>
+
+      <!-- Body row 10 -->
+      <rect x="6"  y="30" width="3"  height="3" fill="#FBC5A4"/>
+      <rect x="9"  y="30" width="24" height="3" fill="#2C5AA0"/>
+      <rect x="33" y="30" width="3"  height="3" fill="#FBC5A4"/>
+
+      <!-- Body row 11 -->
+      <rect x="9"  y="33" width="24" height="3" fill="#2C5AA0"/>
+
+      <!-- ===== FRAME A LEGS (standing rest) ===== -->
+      <g>
+        <animate attributeName="visibility"
+                 values="visible;hidden"
+                 keyTimes="0;0.5"
+                 dur="0.3s" repeatCount="indefinite" calcMode="discrete"/>
+        <rect x="12" y="36" width="9" height="3" fill="#2C5AA0"/>
+        <rect x="24" y="36" width="9" height="3" fill="#2C5AA0"/>
+        <rect x="12" y="39" width="9" height="3" fill="#2C5AA0"/>
+        <rect x="24" y="39" width="9" height="3" fill="#2C5AA0"/>
+        <rect x="9"  y="42" width="12" height="3" fill="#6A2E0E"/>
+        <rect x="24" y="42" width="12" height="3" fill="#6A2E0E"/>
+        <rect x="9"  y="45" width="12" height="3" fill="#6A2E0E"/>
+        <rect x="24" y="45" width="12" height="3" fill="#6A2E0E"/>
+      </g>
+
+      <!-- ===== FRAME B LEGS (walking stride) ===== -->
+      <g visibility="hidden">
+        <animate attributeName="visibility"
+                 values="hidden;visible"
+                 keyTimes="0;0.5"
+                 dur="0.3s" repeatCount="indefinite" calcMode="discrete"/>
+        <rect x="15" y="36" width="12" height="3" fill="#2C5AA0"/>
+        <rect x="15" y="39" width="15" height="3" fill="#2C5AA0"/>
+        <rect x="12" y="42" width="21" height="3" fill="#6A2E0E"/>
+        <rect x="15" y="45" width="9"  height="3" fill="#6A2E0E"/>
+        <rect x="27" y="45" width="9"  height="3" fill="#6A2E0E"/>
+      </g>
+
+      <!-- ===== END MARIO SPRITE ===== -->
+    </g>
+  </g>
+
+  </g> <!-- /REMOVABLE LAYER -->
+
+  <!-- ============================================================ -->
+  <!-- NAME FINALE — fades in over the sky as everything else fades  -->
+  <!-- out. Press Start 2P for that classic SMB Game Over typeface.  -->
+  <!-- White fill + thick black stroke so it reads on the sky blue.  -->
+  <!-- ============================================================ -->
+  <g opacity="0">
+    <animate attributeName="opacity"
+             values="0;0;1;1"
+             keyTimes="0;0.9;0.9333;1"
+             dur="15s" repeatCount="indefinite"/>
+    <text x="400" y="120"
+          font-family="'Press Start 2P', 'Courier New', monospace"
+          font-size="28" font-weight="bold"
+          fill="#FFFFFF" stroke="#000000" stroke-width="4"
+          style="paint-order: stroke"
+          text-anchor="middle"
+          letter-spacing="3">MUNISH BHARDWAJ</text>
+  </g>
+
+</svg>
