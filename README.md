@@ -48,12 +48,6 @@ I'm a passionate QA Engineer and Cloud Architect specializing in Kubernetes, Doc
   <img src="https://streak-stats.demolab.com/?user=itsmunishbhardwaj&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 </div>
 
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=itsmunishbhardwaj&theme=tokyonight&no-frame=true&no-bg=false&margin-w=4&row=1" alt="GitHub Trophies" />
-</div>
-
 ## 📈 Activity Graph
 
 <div align="center">
@@ -62,7 +56,7 @@ I'm a passionate QA Engineer and Cloud Architect specializing in Kubernetes, Doc
 
 ## 📚 Featured Repositories
 
-[![How-to-Everything](https://github-readme-stats.vercel.app/api/pin/?username=itsmunishbhardwaj&repo=how-to-everything&theme=tokyonight&hide_border=true)](https://github.com/itsmunishbhardwaj/how-to-everything)
+[![How-to-Everything](https://github-readme-stats-alpha-nine-zi59dwzwcz.vercel.app/api/pin/?username=itsmunishbhardwaj&repo=how-to-everything&theme=tokyonight&hide_border=true&cache_seconds=1800)](https://github.com/itsmunishbhardwaj/how-to-everything)
 
 <div align="center">
   <a href="https://github.com/itsmunishbhardwaj?tab=repositories">
