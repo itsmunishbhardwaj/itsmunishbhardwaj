@@ -11,7 +11,7 @@ I'm a passionate QA Engineer and Cloud Architect specializing in Kubernetes, Doc
 - 🔭 I'm currently working on deploying helm chart on ROSA (Red-Hat Openshift on AWS)
 - 🌱 I'm currently learning Applied AI with 100x Engineers
 - 📫 How to reach me: [GitHub](https://github.com/itsmunishbhardwaj)
-- ⚡ Fun fact: I document everything in my "how-to-everything" repository!
+- ⚡ Fun fact: I'm building [lore](https://github.com/itsmunishbhardwaj/lore) — codifying your creative DNA
 
 ## 🛠️ Tech Stack
 
@@ -56,7 +56,7 @@ I'm a passionate QA Engineer and Cloud Architect specializing in Kubernetes, Doc
 
 ## 📚 Featured Repositories
 
-[![How-to-Everything](https://github-readme-stats-alpha-nine-zi59dwzwcz.vercel.app/api/pin/?username=itsmunishbhardwaj&repo=how-to-everything&theme=tokyonight&hide_border=true&cache_seconds=1800)](https://github.com/itsmunishbhardwaj/how-to-everything)
+[![lore](https://github-readme-stats-alpha-nine-zi59dwzwcz.vercel.app/api/pin/?username=itsmunishbhardwaj&repo=lore&theme=tokyonight&hide_border=true&cache_seconds=1800)](https://github.com/itsmunishbhardwaj/lore)
 
 <div align="center">
   <a href="https://github.com/itsmunishbhardwaj?tab=repositories">
